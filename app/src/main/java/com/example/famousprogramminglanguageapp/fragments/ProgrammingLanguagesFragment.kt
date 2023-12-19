@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.famousprogramminglanguageapp.R
+import com.example.famousprogramminglanguageapp.databinding.FragmentProgrammingLanguagesBinding
 
 class ProgrammingLanguagesFragment : Fragment() {
-
+    private lateinit var binding: FragmentProgrammingLanguagesBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_programming_languages, container, false)
+        binding = FragmentProgrammingLanguagesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }
