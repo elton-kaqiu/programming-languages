@@ -31,7 +31,6 @@ class LoginScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.btnLogin.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
             val enteredPassword = binding.password.text.toString()
@@ -45,7 +44,7 @@ class LoginScreenFragment : Fragment() {
 
     private fun validateCredentials(enteredUsername: String, enteredPassword: String) {
         val user =
-            list.find { (it.username == enteredPassword) && (it.password == enteredPassword) }
+            list.find { (it.username == enteredUsername) && (it.password == enteredPassword) }
         val programmingLanguagesFragment = ProgrammingLanguagesFragment()
         if (user != null) {
             setFragment(programmingLanguagesFragment)
