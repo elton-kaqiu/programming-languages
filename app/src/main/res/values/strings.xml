@@ -11,4 +11,6 @@
     <string name="language_name">Language name</string>
     <string name="date_dd_mm_yyyy">Created Date\n(DD/MM/YYYY)</string>
     <string name="usage_percentage">Usage Percentage (%)</string>
+    <string name="percentage">percentage</string>
+    <string name="backround_image">backround image</string>
 </resources>
