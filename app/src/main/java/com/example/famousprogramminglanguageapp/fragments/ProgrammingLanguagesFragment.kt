@@ -23,26 +23,28 @@ class ProgrammingLanguagesFragment : Fragment() {
         return binding.root
     }
 
+    private val list = listOf(
+        ProgrammingLanguages("Java", "23/05/1995", 20),
+        ProgrammingLanguages("Kotlin", "20/07/2011", 10),
+        ProgrammingLanguages("Python", "20/02/1991", 30),
+        ProgrammingLanguages("JavaScript", "04/12/1995", 15),
+        ProgrammingLanguages("C++", "01/01/1983", 12),
+        ProgrammingLanguages("Swift", "02/06/2014", 5),
+        ProgrammingLanguages("C#", "20/07/2000", 8),
+        ProgrammingLanguages("Ruby", "21/12/1995", 3),
+        ProgrammingLanguages("Go", "10/11/2009", 2),
+        ProgrammingLanguages("Rust", "07/07/2010", 1),
+        ProgrammingLanguages("TypeScript", "01/10/2012", 7),
+        ProgrammingLanguages("PHP", "08/06/1995", 18),
+        ProgrammingLanguages("C", "02/04/1972", 25),
+        ProgrammingLanguages("R", "15/08/1993", 6),
+        ProgrammingLanguages("Haskell", "01/12/1990", 1),
+        ProgrammingLanguages("Objective-C", "01/03/1984", 4)
+    )
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val list = listOf(
-            ProgrammingLanguages("Java", "23/05/1995", 20),
-            ProgrammingLanguages("Kotlin", "20/07/2011", 10),
-            ProgrammingLanguages("Python", "20/02/1991", 30),
-            ProgrammingLanguages("JavaScript", "04/12/1995", 15),
-            ProgrammingLanguages("C++", "01/01/1983", 12),
-            ProgrammingLanguages("Swift", "02/06/2014", 5),
-            ProgrammingLanguages("C#", "20/07/2000", 8),
-            ProgrammingLanguages("Ruby", "21/12/1995", 3),
-            ProgrammingLanguages("Go", "10/11/2009", 2),
-            ProgrammingLanguages("Rust", "07/07/2010", 1),
-            ProgrammingLanguages("TypeScript", "01/10/2012", 7),
-            ProgrammingLanguages("PHP", "08/06/1995", 18),
-            ProgrammingLanguages("C", "02/04/1972", 25),
-            ProgrammingLanguages("R", "15/08/1993", 6),
-            ProgrammingLanguages("Haskell", "01/12/1990", 1),
-            ProgrammingLanguages("Objective-C", "01/03/1984", 4)
-        )
+
 
         val progLangAdapter = ProgrammingLanguageAdapter(requireContext(), list)
         binding.programmingLanguagesList.adapter = progLangAdapter
