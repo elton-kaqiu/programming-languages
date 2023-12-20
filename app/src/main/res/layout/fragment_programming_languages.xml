@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24sp"
         android:layout_toEndOf="@+id/languageName"
-        android:text="Created Date\n(DD/MM/YY)" />
+        android:text="Created Date\n(DD/MM/YYYY)" />
 
     <TextView
         android:id="@+id/percent"
