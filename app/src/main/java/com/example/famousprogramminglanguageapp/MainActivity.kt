@@ -14,14 +14,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val loginScreenFragment = LoginScreenFragment()
-        val programmingLanguagesFragment = ProgrammingLanguagesFragment()
         setFragment(loginScreenFragment)
     }
 
     private fun setFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmentContainer, fragment)
-            addToBackStack("")
+            addToBackStack(null)
             commit()
         }
     }
