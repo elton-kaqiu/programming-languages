@@ -43,36 +43,36 @@ class LoginScreenFragment : Fragment() {
         }
     }
 
+    private fun validateCredentials(username: String, password: String) {
+        val user = list.find { (it.username == username) && (it.password == password) }
+        val programmingLanguagesFragment = ProgrammingLanguagesFragment()
+        if (user != null) {
+            setFragment(programmingLanguagesFragment)
+        } else {
+            showToast("Gabim username/password")
+        }
+    }
+
     private fun handlePassword(enteredUsername: String) {
         val user = list.find { (it.username == enteredUsername) }
         if (user != null) {
-            Toast.makeText(
-                requireContext(),
-                "Ky eshte passwordi juaj: ${user.password}",
-                Toast.LENGTH_LONG
-            ).show()
+            showToast("Ky eshte passwordi juaj: ${user.password}")
         } else {
-            Toast.makeText(
-                requireContext(),
-                "Nuk egziston useri me keto te dhena",
-                Toast.LENGTH_LONG
-            ).show()
+            showToast("Nuk egziston useri me keto te dhena")
         }
 
     }
 
-
-    private fun validateCredentials(username: String, password: String) {
-        val user = list.find { (it.username == username) && (it.password == password) }
-        if (user != null) {
-            parentFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer, ProgrammingLanguagesFragment())
-                addToBackStack("")
-                commit()
-            }
-        } else {
-            Toast.makeText(requireContext(), "Gabim username/password", Toast.LENGTH_LONG).show()
+    private fun setFragment(fragment: Fragment) {
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, ProgrammingLanguagesFragment())
+            addToBackStack(null)
+            commit()
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
     }
 
 
