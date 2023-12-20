@@ -35,7 +35,13 @@ class ProgrammingLanguagesFragment : Fragment() {
             ProgrammingLanguages("C#", "20/07/2000", 8),
             ProgrammingLanguages("Ruby", "21/12/1995", 3),
             ProgrammingLanguages("Go", "10/11/2009", 2),
-            ProgrammingLanguages("Rust", "07/07/2010", 1)
+            ProgrammingLanguages("Rust", "07/07/2010", 1),
+            ProgrammingLanguages("TypeScript", "01/10/2012", 7),
+            ProgrammingLanguages("PHP", "08/06/1995", 18),
+            ProgrammingLanguages("C", "02/04/1972", 25),
+            ProgrammingLanguages("R", "15/08/1993", 6),
+            ProgrammingLanguages("Haskell", "01/12/1990", 1),
+            ProgrammingLanguages("Objective-C", "01/03/1984", 4)
         )
 
         val progLangAdapter = ProgrammingLanguageAdapter(requireContext(), list)
