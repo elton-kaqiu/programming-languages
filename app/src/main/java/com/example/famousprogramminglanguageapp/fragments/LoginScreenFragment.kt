@@ -33,9 +33,9 @@ class LoginScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnLogin.setOnClickListener {
-            val setUsername = binding.username.text.toString()
-            val setPassword = binding.password.text.toString()
-            validateCredentials(setUsername, setPassword)
+            val enteredUsername = binding.username.text.toString()
+            val enteredPassword = binding.password.text.toString()
+            validateCredentials(enteredUsername, enteredPassword)
         }
         binding.forgotPassword.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
@@ -43,8 +43,9 @@ class LoginScreenFragment : Fragment() {
         }
     }
 
-    private fun validateCredentials(username: String, password: String) {
-        val user = list.find { (it.username == username) && (it.password == password) }
+    private fun validateCredentials(enteredUsername: String, enteredPassword: String) {
+        val user =
+            list.find { (it.username == enteredPassword) && (it.password == enteredPassword) }
         val programmingLanguagesFragment = ProgrammingLanguagesFragment()
         if (user != null) {
             setFragment(programmingLanguagesFragment)
