@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp">
 
-    <ImageView
-        android:id="@+id/languageImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/languageImage"
         android:text="@string/title"
-        android:textSize="25sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/languageImage"
+        android:layout_marginStart="24dp"
+        android:layout_toEndOf="@+id/title"
         android:text="@string/created_date"
-        android:textSize="16sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/usagePercentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/date"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/languageImage"
+        android:layout_marginStart="24dp"
+        android:layout_toEndOf="@+id/date"
         android:text="percentage"
-        android:textSize="16sp" />
+        android:textSize="24sp" />
 
 </RelativeLayout>
