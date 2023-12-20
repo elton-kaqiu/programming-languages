@@ -15,14 +15,6 @@ import java.util.Date
 
 class ProgrammingLanguagesFragment : Fragment() {
     private lateinit var binding: FragmentProgrammingLanguagesBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentProgrammingLanguagesBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     private val list = listOf(
         ProgrammingLanguages("Java", "23/05/1995", 20),
         ProgrammingLanguages("Kotlin", "20/07/2011", 10),
@@ -42,21 +34,28 @@ class ProgrammingLanguagesFragment : Fragment() {
         ProgrammingLanguages("Objective-C", "01/03/1984", 4)
     )
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentProgrammingLanguagesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        val progLangAdapter = ProgrammingLanguageAdapter(requireContext(), list)
-        binding.programmingLanguagesList.adapter = progLangAdapter
+        val langAdapter = ProgrammingLanguageAdapter(requireContext(), list)
+        binding.programmingLanguagesList.adapter = langAdapter
 
         binding.programmingLanguagesList.setOnItemClickListener { _, _, position, _ ->
-            val selectedProgramingLanguage =
-                progLangAdapter.getItem(position) as ProgrammingLanguages
-            Snackbar.make(
-                requireView(),
-                "Kjo gjuhe quhet: ${selectedProgramingLanguage.languageName} dhe daton prej: ${selectedProgramingLanguage.createdDate}",
-                Snackbar.LENGTH_SHORT
-            ).show()
+            val selectedProgramingLanguage = langAdapter.getItem(position) as ProgrammingLanguages
+            showSnackBar("Kjo gjuhe quhet: ${selectedProgramingLanguage.languageName} dhe daton prej: ${selectedProgramingLanguage.createdDate}")
         }
     }
+
+    private fun showSnackBar(message: String) {
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_LONG).show()
+    }
+
 }
