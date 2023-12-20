@@ -47,7 +47,7 @@ class ProgrammingLanguagesFragment : Fragment() {
         val progLangAdapter = ProgrammingLanguageAdapter(requireContext(), list)
         binding.programmingLanguagesList.adapter = progLangAdapter
 
-        binding.programmingLanguagesList.setOnItemClickListener { parent, view, position, id ->
+        binding.programmingLanguagesList.setOnItemClickListener { _, _, position, _ ->
             val selectedProgramingLanguage =
                 progLangAdapter.getItem(position) as ProgrammingLanguages
             Snackbar.make(
