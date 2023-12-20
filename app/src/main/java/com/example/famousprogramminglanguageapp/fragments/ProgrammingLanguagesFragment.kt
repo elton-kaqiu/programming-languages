@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.famousprogramminglanguageapp.R
 import com.example.famousprogramminglanguageapp.adapters.ProgrammingLanguageAdapter
 import com.example.famousprogramminglanguageapp.databinding.FragmentProgrammingLanguagesBinding
 import com.example.famousprogramminglanguageapp.models.ProgrammingLanguages
+import com.google.android.material.snackbar.Snackbar
 import java.util.Date
 
 class ProgrammingLanguagesFragment : Fragment() {
@@ -24,18 +26,29 @@ class ProgrammingLanguagesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val list = listOf(
-            ProgrammingLanguages("Java", Date(1995, 5, 23), 20),
-            ProgrammingLanguages("Kotlin", Date(2011, 7, 20), 10),
-            ProgrammingLanguages("Python", Date(1991, 2, 20), 30),
-            ProgrammingLanguages("JavaScript", Date(1995, 12, 4), 15),
-            ProgrammingLanguages("C++", Date(1983, 1, 1), 12),
-            ProgrammingLanguages("Swift", Date(2014, 6, 2), 5),
-            ProgrammingLanguages("C#", Date(2000, 7, 20), 8),
-            ProgrammingLanguages("Ruby", Date(1995, 12, 21), 3),
-            ProgrammingLanguages("Go", Date(2009, 11, 10), 2),
-            ProgrammingLanguages("Rust", Date(2010, 7, 7), 1)
+            ProgrammingLanguages("Java", "23/05/1995", 20),
+            ProgrammingLanguages("Kotlin", "20/07/2011", 10),
+            ProgrammingLanguages("Python", "20/02/1991", 30),
+            ProgrammingLanguages("JavaScript", "04/12/1995", 15),
+            ProgrammingLanguages("C++", "01/01/1983", 12),
+            ProgrammingLanguages("Swift", "02/06/2014", 5),
+            ProgrammingLanguages("C#", "20/07/2000", 8),
+            ProgrammingLanguages("Ruby", "21/12/1995", 3),
+            ProgrammingLanguages("Go", "10/11/2009", 2),
+            ProgrammingLanguages("Rust", "07/07/2010", 1)
         )
+
         val progLangAdapter = ProgrammingLanguageAdapter(requireContext(), list)
         binding.programmingLanguagesList.adapter = progLangAdapter
+
+        binding.programmingLanguagesList.setOnItemClickListener { parent, view, position, id ->
+            val selectedProgramingLanguage =
+                progLangAdapter.getItem(position) as ProgrammingLanguages
+            Snackbar.make(
+                requireView(),
+                "Kjo gjuhe quhet: ${selectedProgramingLanguage.languageName} dhe daton prej: ${selectedProgramingLanguage.createdDate}",
+                Snackbar.LENGTH_SHORT
+            ).show()
+        }
     }
 }

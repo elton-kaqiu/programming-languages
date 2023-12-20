@@ -66,7 +66,7 @@ class LoginScreenFragment : Fragment() {
         val user = list.find { (it.username == username) && (it.password == password) }
         if (user != null) {
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer, LoginScreenFragment())
+                replace(R.id.fragmentContainer, ProgrammingLanguagesFragment())
                 addToBackStack("")
                 commit()
             }

@@ -30,7 +30,7 @@ class ProgrammingLanguageAdapter(
         val usagePercentage = rowView.findViewById<TextView>(R.id.usagePercentage)
 
         title.text = listOfLanguages[position].languageName
-        date.text = listOfLanguages[position].createdDate.toString()
+        date.text = listOfLanguages[position].createdDate
         usagePercentage.text = listOfLanguages[position].percentageUsage.toString()
         return rowView
     }
