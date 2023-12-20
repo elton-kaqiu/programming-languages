@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24sp"
-        android:text="Language name" />
+        android:text="@string/language_name" />
 
     <TextView
         android:id="@+id/dateCreated"
@@ -19,14 +19,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24sp"
         android:layout_toEndOf="@+id/languageName"
-        android:text="Created Date\n(DD/MM/YYYY)" />
+        android:text="@string/date_dd_mm_yyyy" />
 
     <TextView
         android:id="@+id/percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/dateCreated"
-        android:text="Usage Percentage (%)" />
+        android:text="@string/usage_percentage" />
 
     <ListView
         android:id="@+id/programmingLanguagesList"

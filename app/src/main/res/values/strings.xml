@@ -8,4 +8,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="created_date">Created date</string>
+    <string name="language_name">Language name</string>
+    <string name="date_dd_mm_yyyy">Created Date\n(DD/MM/YYYY)</string>
+    <string name="usage_percentage">Usage Percentage (%)</string>
 </resources>
