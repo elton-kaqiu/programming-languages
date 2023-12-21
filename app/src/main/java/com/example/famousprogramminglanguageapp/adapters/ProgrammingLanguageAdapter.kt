@@ -1,5 +1,6 @@
 package com.example.famousprogramminglanguageapp.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class ProgrammingLanguageAdapter(
 
     override fun getItemId(position: Int): Long = position.toLong()
 
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val rowView = layoutInflater.inflate(R.layout.programming_language_detail, parent, false)
 
