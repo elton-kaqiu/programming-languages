@@ -48,7 +48,7 @@ class ProgrammingLanguagesFragment : Fragment() {
         val langAdapter = ProgrammingLanguageAdapter(requireContext(), list)
         binding.programmingLanguagesList.adapter = langAdapter
 
-        binding.programmingLanguagesList.setOnItemClickListener { _, _, position, _ ->
+        binding.programmingLanguagesList.setOnItemClickListener { parent, view, position, id ->
             val selectedProgramingLanguage = langAdapter.getItem(position) as ProgrammingLanguages
             showSnackBar("Kjo gjuhe quhet: ${selectedProgramingLanguage.languageName} dhe daton prej: ${selectedProgramingLanguage.createdDate}")
         }
