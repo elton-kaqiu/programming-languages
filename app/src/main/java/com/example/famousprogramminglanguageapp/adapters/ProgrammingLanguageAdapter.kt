@@ -23,7 +23,6 @@ class ProgrammingLanguageAdapter(
 
     override fun getItemId(position: Int): Long = position.toLong()
 
-    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val rowView = layoutInflater.inflate(R.layout.programming_language_detail, parent, false)
 
