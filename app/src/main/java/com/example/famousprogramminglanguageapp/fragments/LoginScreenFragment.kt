@@ -46,20 +46,15 @@ class LoginScreenFragment : Fragment() {
         val user =
             list.find { (it.username == enteredUsername) && (it.password == enteredPassword) }
         val programmingLanguagesFragment = ProgrammingLanguagesFragment()
-        if (user != null) {
-            setFragment(programmingLanguagesFragment)
-        } else {
-            showToast("Gabim username/password")
-        }
+        //user?.let{block} checks if user is not null than let {block} is executed, ?: this is the else part if user is null
+        user?.let { setFragment(programmingLanguagesFragment) }
+            ?: showToast("Gabim username/password")
     }
 
     private fun handlePassword(enteredUsername: String) {
         val user = list.find { (it.username == enteredUsername) }
-        if (user != null) {
-            showToast("Ky eshte passwordi juaj: ${user.password}")
-        } else {
-            showToast("Nuk egziston useri me keto te dhena")
-        }
+        user?.let { showToast("Ky eshte passwordi juaj: ${user.password}") }
+            ?: showToast("Nuk egziston useri me keto te dhena")
 
     }
 
